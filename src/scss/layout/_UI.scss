@@ -1,0 +1,81 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        min-height: 100vh;
+    }
+
+    .I1{
+        background-image: url(../img/3.jpg);
+    }
+    .I2{
+        background-image: url(../img/1.jpg);
+    }
+    .I3{
+        background-image: url(../img/2.jpg);
+    }
+
+    .imagen{
+        height: 20rem;
+        background-size: cover;
+        background-position: center;
+
+        @include m.tablet {
+            height: auto;
+        }
+    }
+
+    .app{
+        width: 95%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        @include m.tablet{
+            overflow: scroll;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.logo {
+    
+    text-align: center;
+    margin-top: 1rem;
+
+    img{
+        width: 18rem;
+        border-radius: 50%;
+    }
+}
+
+.barra {
+    margin: v.$separacion 0;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .boton{
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;
+    }
+}
